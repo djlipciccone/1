@@ -1,0 +1,58 @@
+/*DESENVOLVER UM APP QUE FAÇA A ENTRADA DE DEZ ELEMENTOS INTEIROS
+ * DE UM VETOR TESTE1 ECONSTRUA UM VETOR TESTE2 DO MESMO TIPO
+ * OBSERVANDO A SEGUNTE FORMAÇÃO ; SE O VALOR DO INDICE FOR PAR 
+ * O VALOR DO ELEMENTO DEVERA SER MULTIPLICADO POR 5; SE FOR IMPAR 
+ * DEVERA SER SOMADO COM 5 AO FINAL MOSTRAR CONTEUDO DOS DOIS VETORES
+ */
+package projetoparimpar;
+//import java.io.PrintStream;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author DJLIPCICCONE
+ */
+public class ProjetoparImpar {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        //VARIAVEIS
+        int[] teste1 = new int[10];
+        int[] teste2 = new int[10];
+        //TRATAMENTO DE EXCEÇÃO
+        try
+        {
+            //ENTRADA DE DADOS
+            for(int i=0; i <teste1.length;i ++)
+            {
+            teste1[i] = Integer.parseInt(JOptionPane.showInputDialog("digite o valor" + i + ":"));
+            }//fim do laço de entrada for
+            //verificando se o indice é par ou impar
+            for(int i=0; i <teste1.length; i++)
+            {
+                if(i % 2 ==0){
+                    teste2[i] = teste1[i] * 5;
+                }
+                else
+                {
+                    teste2[i] = teste1[i] + 5;
+                }//fim do else
+            }//fim do laco de repetição do indice par ou impar
+            //saida do resulTaDo
+            System.out.printf("%s\n", "resultado: ");     
+            //laço for de saida
+            for(int i = 0; i<10; i++)           
+            {
+            System.out.printf("%s%d%s%d","teste1[",i,"]=", teste1[i]);
+            System.out.printf("%10s%d%s%d\n", "teste2[",i,"]=", teste2[i]);
+        }//FIM DO LAÇO DE SAIDA
+        }catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, "Ocorreu um erro durante a leitura");
+        }//FIM DO TRY CATCH
+        // TODO code application logic here
+    }//fim do metodo main
+    
+}//fim da classe proj012ParImpar
